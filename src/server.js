@@ -2,8 +2,9 @@
 import  'dotenv/config'
 import express from "express"
 import cors from 'cors'
+import logger from './utils/logger'
 
-// config express
+// configure express
 const app = express()
 const PORT = process.env.PORT || 8090
 
@@ -19,5 +20,5 @@ app.get('/', (req, res, next) => {
 })
 
 app.listen(PORT, () => {
-    console.log(`Server is up and running on ${PORT}`);
+    logger.info(`Server is up and running on ${PORT}`);
 })
